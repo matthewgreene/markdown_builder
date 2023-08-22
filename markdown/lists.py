@@ -47,9 +47,6 @@ class UnorderedList(BaseList):
             raise ValueError(f"Invalid marker: Allowed {[m.value for m in allowed_markers]}, recieved [{marker.value}]")
         super().__init__(items=items, marker=marker)
 
-    def addItem(self, item: Union[str, UnorderedList]):
-        self.items.append(item)
-
 
 class OrderedList(BaseList):
 

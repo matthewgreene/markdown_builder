@@ -5,7 +5,7 @@ from enum import Enum
 class BaseElement(abc.ABC):
     @abc.abstractmethod
     def md_str(self) -> str:
-        pass
+        """do nothing"""
 
 
 class Header(BaseElement):
