@@ -1,5 +1,5 @@
-from elements import Header
-from lists import CheckboxList, Marker, OrderedList, UnorderedList
+from .elements import Header
+from .lists import CheckboxList, Marker, OrderedList, UnorderedList
 from typing import List, Union
 
 class MarkdownBuilder:
@@ -37,4 +37,9 @@ class MarkdownBuilder:
         elemStrs = [elem.md_str() for elem in self.elements]
         return "\n".join(elemStrs)
     
-    # TODO: Implements file writing functionality
+    def write(self, path: str):
+        """Writes Markdown elements to specified file path"""
+
+        with open(path, "w+") as file:
+            markdown = self.toStr()
+            file.write(markdown)
