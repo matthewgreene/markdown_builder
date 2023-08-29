@@ -4,11 +4,11 @@ from enum import Enum
 from typing import List, Union
 
 class Marker(Enum):
-        DASH = "-"
-        ASTERISK = "*"
-        PLUS = "+"
-        NUMBER = "1."
-        CHECKBOX = "- [ ]"   
+        ASTERISK    = "*"
+        CHECKBOX    = "- [ ]"   
+        DASH        = "-"
+        NUMBER      = "1."
+        PLUS        = "+"
 
 
 class BaseList():
