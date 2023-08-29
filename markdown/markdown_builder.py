@@ -1,4 +1,4 @@
-from .elements import Header
+from .elements import Header, Table
 from .lists import CheckboxList, Marker, OrderedList, UnorderedList
 from typing import List, Union
 
@@ -30,6 +30,11 @@ class MarkdownBuilder:
         """Adds new checkbox lists to the Markdown file"""
 
         self.elements.append(cl)
+
+    def addTable(self, table: Table):
+        """Adds new table elements to the Markdown file"""
+
+        self.elements.append(table)
 
     def toStr(self):
         """Returns the Markdown elements as strings to be writing to file."""

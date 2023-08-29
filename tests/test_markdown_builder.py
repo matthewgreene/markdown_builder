@@ -3,6 +3,7 @@ import pytest
 import tempfile
 from markdown.markdown_builder import MarkdownBuilder
 from markdown.lists import *
+from markdown.elements import Row, Table
 
 @pytest.fixture
 def md():
@@ -26,9 +27,14 @@ def test_add_ordered_lists(md: MarkdownBuilder):
     md.addOrderedList(uol)
     assert len(md.elements) == 1
 
-def test_checkbox_lists(md: MarkdownBuilder):
+def test_add_checkbox_lists(md: MarkdownBuilder):
     uol = CheckboxList(["test"])
     md.addCheckboxList(uol)
+    assert len(md.elements) == 1
+
+def test_add_table(md: MarkdownBuilder):
+    rows = [Row(["1", "2", "3"]), Row(["one","two","three"])]
+    md.addTable(Table(rows))
     assert len(md.elements) == 1
 
 def test_toStr_no_elements(md: MarkdownBuilder):
