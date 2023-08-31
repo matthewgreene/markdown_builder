@@ -1,5 +1,6 @@
 from .header import Header
 from .list import CheckboxList, Marker, OrderedList, UnorderedList
+from .paragraph import Paragraph
 from .table import Table
 from typing import List, Union
 
@@ -36,6 +37,11 @@ class MarkdownBuilder:
         """Adds new table elements to the Markdown file"""
 
         self.elements.append(table)
+
+    def addParagraph(self, text: str):
+        """Adds new paragraph elements to the Markdown file"""
+
+        self.elements.append(Paragraph(text))
 
     def toStr(self):
         """Returns the Markdown elements as strings to be writing to file."""

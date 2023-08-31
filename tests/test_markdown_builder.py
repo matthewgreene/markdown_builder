@@ -37,6 +37,10 @@ def test_add_table(md: MarkdownBuilder):
     md.addTable(Table(rows))
     assert len(md.elements) == 1
 
+def test_add_paragraph(md: MarkdownBuilder):
+    md.addParagraph("Test paragraph")
+    assert len(md.elements) == 1
+
 def test_toStr_no_elements(md: MarkdownBuilder):
     assert not md.toStr()
 
