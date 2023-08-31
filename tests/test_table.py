@@ -1,6 +1,6 @@
 import pytest
 
-from markdown.elements import Row, Table, TableAlign
+from markdown.table import Row, Table, TableAlign
 
 
 def test_row():

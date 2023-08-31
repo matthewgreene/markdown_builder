@@ -1,4 +1,4 @@
-from markdown.lists import CheckboxList, Marker, OrderedList, UnorderedList
+from markdown.list import CheckboxList, Marker, OrderedList, UnorderedList
 import pytest
 
 

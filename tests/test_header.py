@@ -1,5 +1,5 @@
 import pytest
-from markdown.elements import Header
+from markdown.header import Header
 text = "Test text"
 
 def test_valid_headers():

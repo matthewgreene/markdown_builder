@@ -2,8 +2,8 @@ import os
 import pytest
 import tempfile
 from markdown.markdown_builder import MarkdownBuilder
-from markdown.lists import *
-from markdown.elements import Row, Table
+from markdown.list import *
+from markdown.table import Row, Table
 
 @pytest.fixture
 def md():

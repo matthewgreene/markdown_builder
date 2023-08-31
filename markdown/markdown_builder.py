@@ -1,5 +1,6 @@
-from .elements import Header, Table
-from .lists import CheckboxList, Marker, OrderedList, UnorderedList
+from .header import Header
+from .list import CheckboxList, Marker, OrderedList, UnorderedList
+from .table import Table
 from typing import List, Union
 
 class MarkdownBuilder:
