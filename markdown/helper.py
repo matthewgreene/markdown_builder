@@ -2,9 +2,10 @@ from enum import Enum
 
 class Syntax(Enum):
     """Supported syntax for adding emphesis to a markdown element"""
-    
+
     b = "**" # Bold
     i = "*"  # Italics
+    c = "`"  # Code
 
     @classmethod
     def contains(cls, code: str):
@@ -15,7 +16,10 @@ class Emphasis:
     @staticmethod
     def withEnphesis(text: str, codes: str = ""):
         """Decorates text with emphesis elements. Any unsupported code will be ignored."""
+        
+        values = [Syntax[c].value for c in codes.lower() if Syntax.contains(c)]
+        begin = "".join(values)
+        end = "".join(values[::-1])
 
-        values = "".join([Syntax[c].value for c in set(codes.lower()) if Syntax.contains(c)])
-        return f"{values}{text}{values}"
+        return f"{begin}{text}{end}"
     

@@ -5,13 +5,16 @@ from markdown.helper import Emphasis
 def test_emphesis():
     text = "test"
     inputs = [
-        ['b',  f"**{text}**"],
-        ['i',  f"*{text}*"],
-        ['bi', f"***{text}***"],
-        ['ib', f"***{text}***"],
-        ['ab', f"**{text}**"],
-        ['ba', f"**{text}**"],
-        ['ia', f"*{text}*"],
+        ['b',   f"**{text}**"],
+        ['i',   f"*{text}*"],
+        ['bi',  f"***{text}***"],
+        ['ib',  f"***{text}***"],
+        ['ab',  f"**{text}**"],
+        ['ba',  f"**{text}**"],
+        ['ia',  f"*{text}*"],
+        ['bic', f"***`{text}`***"],
+        ['icb', f"*`**{text}**`*"],
+        ['cbi', f"`***{text}***`"],
 
     ]
     for input in inputs:
