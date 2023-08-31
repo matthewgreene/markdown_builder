@@ -41,6 +41,23 @@ def test_add_paragraph(md: MarkdownBuilder):
     md.addParagraph("Test paragraph")
     assert len(md.elements) == 1
 
+def test_create_link(md: MarkdownBuilder):
+    text = "test"
+    url  = "https://test.com"
+    alt  = "alt text"
+
+    inputs = [
+        ["", f"[{text}]({url} \"{alt}\")"],
+        ["b", f"[**{text}**]({url} \"{alt}\")"],
+        ["i", f"[*{text}*]({url} \"{alt}\")"],
+        ["c", f"[`{text}`]({url} \"{alt}\")"],
+        ["bic", f"[***`{text}`***]({url} \"{alt}\")"],
+    ]
+
+    for input in inputs:
+        codes, expected = input
+        assert md.createLink(text=text, url=url, alt=alt, emphesis=codes) == expected
+
 def test_toStr_no_elements(md: MarkdownBuilder):
     assert not md.toStr()
 

@@ -1,4 +1,5 @@
 from .header import Header
+from .helper import Syntax, Emphasis
 from .list import CheckboxList, Marker, OrderedList, UnorderedList
 from .paragraph import Paragraph
 from .table import Table
@@ -42,6 +43,16 @@ class MarkdownBuilder:
         """Adds new paragraph elements to the Markdown file"""
 
         self.elements.append(Paragraph(text))
+
+    def createLink(self, url: str, text: str, alt: str = "", emphesis: str = "") -> str:
+        """Creates new link elements"""
+        
+        if emphesis:
+            text = Emphasis.withEnphesis(text=text, codes=emphesis)
+
+        return f"[{text}]({url} \"{alt}\")"
+
+        
 
     def toStr(self):
         """Returns the Markdown elements as strings to be writing to file."""
