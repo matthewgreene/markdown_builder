@@ -10,8 +10,7 @@ class MarkdownBuilder:
     This class contains methods for constructing Markdown files.
     """
 
-    def __init__(self, title: str="") -> None:
-        self.title = title
+    def __init__(self) -> None:
         self.elements = []
 
     def addHeader(self, level: int, text: str):

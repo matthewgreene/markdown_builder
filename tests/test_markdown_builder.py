@@ -7,7 +7,7 @@ from markdown.table import Row, Table
 
 @pytest.fixture
 def md():
-    return MarkdownBuilder("test")
+    return MarkdownBuilder()
 
 # TODO: Add tests for MarkdownBuilder
 def test_empty_markdown(md: MarkdownBuilder):
