@@ -1,6 +1,6 @@
 from .header import Header
 from .helper import Syntax, Emphasis
-from .list import CheckboxList, Marker, OrderedList, UnorderedList
+from .list import BaseList, CheckboxList, Marker, OrderedList, UnorderedList
 from .paragraph import Paragraph
 from .table import Table
 from typing import List, Union
@@ -18,20 +18,9 @@ class MarkdownBuilder:
         
         self.elements.append(Header(level=level, text=text))
 
-    def addUnorderedList(self, uol: UnorderedList):
-        """Adds new unordered lists to the Markdown file"""
-
-        self.elements.append(uol)
-
-    def addOrderedList(self, ol: OrderedList):
-        """Adds new ordered lists to the Markdown file"""
-
-        self.elements.append(ol)
-
-    def addCheckboxList(self, cl: CheckboxList):
-        """Adds new checkbox lists to the Markdown file"""
-
-        self.elements.append(cl)
+    def addList(self, mdList: BaseList):
+        """Adds a new list to the Markdown file"""
+        self.elements.append(mdList)
 
     def addTable(self, table: Table):
         """Adds new table elements to the Markdown file"""

@@ -19,17 +19,17 @@ def test_add_header(md: MarkdownBuilder):
 
 def test_add_unordered_lists(md: MarkdownBuilder):
     uol = UnorderedList(["test"])
-    md.addUnorderedList(uol)
+    md.addList(uol)
     assert len(md.elements) == 1
 
 def test_add_ordered_lists(md: MarkdownBuilder):
     uol = OrderedList(["test"])
-    md.addOrderedList(uol)
+    md.addList(uol)
     assert len(md.elements) == 1
 
 def test_add_checkbox_lists(md: MarkdownBuilder):
     uol = CheckboxList(["test"])
-    md.addCheckboxList(uol)
+    md.addList(uol)
     assert len(md.elements) == 1
 
 def test_add_table(md: MarkdownBuilder):
